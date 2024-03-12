@@ -1,5 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, ManyToOne } from "typeorm";
 import { User } from "./User";
+import { Categories } from "./Categories";
 
 @Entity()
 export class Expenses {
@@ -15,8 +16,8 @@ export class Expenses {
     @Column("varchar", { length: 200})
     expense_description!: string
 
-    @Column()
-    category_id!: number
+    @ManyToOne(() => Categories, categories => categories.category)
+    category!: Categories
 
     @ManyToOne(() => User, user => user.expenses)
     user!: User

@@ -2,12 +2,18 @@ import express from 'express'
 import { Request, Response } from "express"
 import { User } from "./entity/User"
 import { dataSource } from './data-source'
+import { Expenses } from './entity/Expenses';
+import { ExpensesController } from './controller/ExpensesController';
+import { UserController } from './controller/UserController';
+import { Categories } from './entity/Categories';
+import { CategoriesController } from './controller/CategoriesController';
 
 // create and setup express app
 const app = express()
 app.use(express.json())
 const PORT = 3000;
 
+//const expensesController = new ExpensesController();
 app.get('/', (req, res) => {
   res.send('Hello, TypeScript with Express!');
 });
@@ -23,41 +29,20 @@ dataSource
     })
 
 // register routes
-app.get("/users", async function (req: Request, res: Response) {
-    const users = await dataSource.getRepository(User).find()
-    res.json(users)
-})
+app.get("/users", UserController.getAll);
+app.get("/users/:id", UserController.get);
+app.post("/users", UserController.create);
+app.patch("/users/:id", UserController.update);
+app.delete("/users/:id", UserController.delete);
 
-app.get("/users/:id", async function (req: Request, res: Response) {
-  const results = await dataSource.getRepository(User).findOneBy({
-    id: parseInt(req.params.id),
-  })
-  return res.send(results)
-})
+app.post("/categories", CategoriesController.create);
+app.get("/categories", CategoriesController.getAll);
 
-app.post("/users", async function (req: Request, res: Response) {
-  const user = await dataSource.getRepository(User).create(req.body)
-  const results = await dataSource.getRepository(User).save(user)
-  return res.send(results)
-})
 
-app.put("/users/:id", async function (req: Request, res: Response) {
-  const user = await dataSource.getRepository(User).findOneBy({
-    id: parseInt(req.params.id),
-  })
-  if (user) {
-    dataSource.getRepository(User).merge(user, req.body)
-    const results = await dataSource.getRepository(User).save(user)
-    return res.send(results)
-  } else {
-    return res.status(404).send("User not found")
-  }
-})
-
-app.delete("/users/:id", async function (req: Request, res: Response) {
-  const results = await dataSource.getRepository(User).delete(req.params.id)
-  return res.send(results)
-})
+app.post("/expenses", ExpensesController.create);
+app.get("/expenses/:id", ExpensesController.get);
+app.delete("/expenses/:id", ExpensesController.delete);
+app.patch("/expenses/:id", ExpensesController.update);
 
 // start express server
 app.listen(PORT)
