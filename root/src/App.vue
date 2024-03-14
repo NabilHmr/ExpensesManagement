@@ -1,5 +1,8 @@
 <template>
-
+  <div id="app">
+    <Navbar title="Expenses Management" />
+     Le reste du contenu de votre application 
+  </div>
   <div class="app">
     <Sidebar />
   </div>
@@ -12,49 +15,58 @@ import { CSidebar, CSidebarBrand,
   CSidebarNav,
   CSidebarToggler, CNavGroup, CNavItem, CNavTitle, CBadge } from '@coreui/vue'
 import Sidebar from "@/components/Sidebar.vue";
+import Navbar from "@/components/Navbar.vue";
 // import Sidebar from './components/Sidebar.vue'
 </script>
 
-<!--<style lang="scss">-->
-<!--:root {-->
-<!--  &#45;&#45;primary: #4ade80;-->
-<!--  &#45;&#45;primary-alt: #22c55e;-->
-<!--  &#45;&#45;grey: #64748b;-->
-<!--  &#45;&#45;dark: #1e293b;-->
-<!--  &#45;&#45;dark-alt: #334155;-->
-<!--  &#45;&#45;light: #f1f5f9;-->
-<!--  &#45;&#45;sidebar-width: 300px;-->
-<!--}-->
+<style>
+#app {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 50px; /* pour s'assurer que le contenu ne soit pas caché sous la barre de navigation */
+  
+}
+</style>
 
-<!--* {-->
-<!--  margin: 0;-->
-<!--  padding: 0;-->
-<!--  box-sizing: border-box;-->
-<!--  font-family: 'Fira sans', sans-serif;-->
-<!--}-->
+<style lang="scss">
+:root {
+  --primary: #4ade80;
+  --primary-alt: #22c55e;
+  --grey: #64748b;
+  --dark: #1e293b;
+  --dark-alt: #334155;
+  --light: #f1f5f9;
+  --sidebar-width: 300px;
+}
 
-<!--body {-->
-<!--  background: var(&#45;&#45;light);-->
-<!--}-->
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira sans', sans-serif;
+}
 
-<!--button {-->
-<!--  cursor: pointer;-->
-<!--  appearance: none;-->
-<!--  border: none;-->
-<!--  outline: none;-->
-<!--  background: none;-->
-<!--}-->
+body {
+  background: var(--light);
+}
 
-<!--.app {-->
-<!--  display: flex;-->
+button {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
 
-<!--  main {-->
-<!--    flex: 1 1 0;-->
-<!--    padding: 2rem;-->
+.app {
+  display: flex;
 
-<!--    @media (max-width: 1024px) {-->
-<!--      padding-left: 6rem;-->
-<!--    }-->
-<!--  }-->
-<!--}-->
-<!--</style>-->
+  main {
+    flex: 1 1 0;
+    padding: 2rem;
+
+    @media (max-width: 1024px) {
+      padding-left: 6rem;
+    }
+  }
+}
+</style>
