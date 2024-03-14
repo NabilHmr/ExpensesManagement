@@ -11,14 +11,25 @@
     "test:unit": "nightwatch src/**/__tests__/*"
   },
   "dependencies": {
+    "@coreui/chartjs": "^3.1.2",
+    "@coreui/icons": "^3.0.1",
+    "@coreui/icons-vue": "^2.0.0",
+    "@coreui/vue": "^4.10.2",
+    "@heroicons/vue": "^2.1.1",
+    "@mdi/js": "^7.4.47",
     "@vueform/vueform": "^1.9.1",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.2",
     "express.js": "^1.0.0",
+    "material-icons": "^1.13.12",
     "pinia": "^2.1.7",
-    "vue": "^3.4.15"
+    "vue": "^3.4.15",
+    "vue-material-design-icons": "^5.3.0",
+    "vue-router": "^4.0.12",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
+    "@mdi/font": "^7.4.47",
     "@nightwatch/vue": "^3.1.0",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vue/test-utils": "^2.4.4",

@@ -1,47 +1,60 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="app">
+    <Sidebar />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script setup>
+import { CSidebar, CSidebarBrand,
+  CSidebarFooter,
+  CSidebarHeader,
+  CSidebarNav,
+  CSidebarToggler, CNavGroup, CNavItem, CNavTitle, CBadge } from '@coreui/vue'
+import Sidebar from "@/components/Sidebar.vue";
+// import Sidebar from './components/Sidebar.vue'
+</script>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+<!--<style lang="scss">-->
+<!--:root {-->
+<!--  &#45;&#45;primary: #4ade80;-->
+<!--  &#45;&#45;primary-alt: #22c55e;-->
+<!--  &#45;&#45;grey: #64748b;-->
+<!--  &#45;&#45;dark: #1e293b;-->
+<!--  &#45;&#45;dark-alt: #334155;-->
+<!--  &#45;&#45;light: #f1f5f9;-->
+<!--  &#45;&#45;sidebar-width: 300px;-->
+<!--}-->
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+<!--* {-->
+<!--  margin: 0;-->
+<!--  padding: 0;-->
+<!--  box-sizing: border-box;-->
+<!--  font-family: 'Fira sans', sans-serif;-->
+<!--}-->
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+<!--body {-->
+<!--  background: var(&#45;&#45;light);-->
+<!--}-->
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<!--button {-->
+<!--  cursor: pointer;-->
+<!--  appearance: none;-->
+<!--  border: none;-->
+<!--  outline: none;-->
+<!--  background: none;-->
+<!--}-->
+
+<!--.app {-->
+<!--  display: flex;-->
+
+<!--  main {-->
+<!--    flex: 1 1 0;-->
+<!--    padding: 2rem;-->
+
+<!--    @media (max-width: 1024px) {-->
+<!--      padding-left: 6rem;-->
+<!--    }-->
+<!--  }-->
+<!--}-->
+<!--</style>-->
