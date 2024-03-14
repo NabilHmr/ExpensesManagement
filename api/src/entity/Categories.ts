@@ -15,7 +15,7 @@ export class Categories {
     category_id!: number
 
     @OneToMany(() => Expenses, expenses => expenses.category)
-    category!: Categories
+    expenses!: Expenses
 
     @Column("varchar", { length: 50})
     category_name!: string

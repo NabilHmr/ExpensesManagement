@@ -16,7 +16,7 @@ export class Expenses {
     @Column("varchar", { length: 200})
     expense_description!: string
 
-    @ManyToOne(() => Categories, categories => categories.category)
+    @ManyToOne(() => Categories, categories => categories.expenses)
     category!: Categories
 
     @ManyToOne(() => User, user => user.expenses)
