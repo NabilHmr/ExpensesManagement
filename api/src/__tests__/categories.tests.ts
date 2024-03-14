@@ -19,7 +19,7 @@ describe('GET /categories', () => {
 describe('POST /categories', () => {
     it('should create a new category', () => {
         request(app)
-            .post('/categories')
+            .post('/users')
             .send({ category_type: 'CREDIT', category_name : 'Salary' })
             .set('Accept', 'application/json')
             .expect(201)
