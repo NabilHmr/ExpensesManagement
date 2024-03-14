@@ -2,6 +2,7 @@
   <div id="app">
     <Navbar title="Expenses Management" />
      Le reste du contenu de votre application 
+    <Charts />
   </div>
   <div class="app">
     <Sidebar />
@@ -16,6 +17,7 @@ import { CSidebar, CSidebarBrand,
   CSidebarToggler, CNavGroup, CNavItem, CNavTitle, CBadge } from '@coreui/vue'
 import Sidebar from "@/components/Sidebar.vue";
 import Navbar from "@/components/Navbar.vue";
+import Charts from "@/components/Charts.vue";
 // import Sidebar from './components/Sidebar.vue'
 </script>
 
