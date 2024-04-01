@@ -1,7 +1,7 @@
 import express from 'express';
 import { Categories } from "../entity/Categories";
 import request from 'supertest';
-import { User } from '../entity/User';
+import { Users } from '../entity/Users';
 
 const app = express();
 
@@ -12,7 +12,7 @@ describe('GET /users', () => {
             .set('Accept', 'application/json')
             .expect(200)
             .then((response) => {
-                expect(response.body).toEqual(User);
+                expect(response.body).toEqual(Users);
             });
     });
 });
