@@ -1,32 +1,24 @@
 {
-  "name": "expenses-tracker",
-  "version": "0.0.0",
+  "name": "expenses-tracker-frontend",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "test:e2e": "nightwatch tests/e2e/*",
-    "test:unit": "nightwatch src/**/__tests__/*"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@vueform/vueform": "^1.9.1",
-    "bootstrap": "^5.3.3",
-    "chart.js": "^4.4.2",
-    "express.js": "^1.0.0",
     "pinia": "^2.1.7",
-    "vue": "^3.4.15"
+    "vue": "^3.4.21",
+    "vue-router": "4",
+    "vue-unicons": "^3.3.1"
   },
   "devDependencies": {
-    "@nightwatch/vue": "^3.1.0",
-    "@vitejs/plugin-vue": "^5.0.3",
-    "@vue/test-utils": "^2.4.4",
-    "chromedriver": "^121.0.0",
-    "geckodriver": "^4.3.1",
-    "nightwatch": "^3.4.0",
-    "ts-node": "^10.9.2",
-    "vite": "^5.0.11",
-    "vite-plugin-nightwatch": "^0.4.6"
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.0"
   }
 }
