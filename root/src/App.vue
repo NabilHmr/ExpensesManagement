@@ -1,6 +1,6 @@
 <template>
 
-  <div class="app d-flex align-items-start" style="width: max-content;">
+  <div class="d-flex align-items-start" style="width: max-content;">
     <Sidebar />
     <div id="top-wrapper" class="d-flex align-items-stretch">
       <div id="form-add-expense" class="w-50" style="margin-right: 3%;">

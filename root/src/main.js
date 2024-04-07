@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import Vueform from '@vueform/vueform'
 import vueformConfig from './../vueform.config'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 const app = createApp(App)
 
