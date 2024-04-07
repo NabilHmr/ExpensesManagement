@@ -6,8 +6,8 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: your_username
-      POSTGRES_PASSWORD: your_password
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: BW&&6gmKP@AQna
       POSTGRES_DB: expensestracker
     volumes:
       - ./data:/var/lib/postgresql/data
