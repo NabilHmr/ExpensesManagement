@@ -1,12 +1,16 @@
-import express from 'express'
-import { Request, Response } from "express"
-import { dataSource } from './data-source'
+import express from 'express';
+import cors from 'cors';
+import { dataSource } from './data-source';
 import { CategoriesController, ExpensesController, UsersController } from './controller/main.controllers';
-import { Categories, Expenses, Users } from './entity/main.entities';
 
 // create and setup express app
-const app = express()
-app.use(express.json())
+const app = express();
+app.use(express.json());
+const corsOptions = {
+    origin: 'http://localhost:5173',
+    optionsSuccessStatus: 200
+}
+app.use(cors(corsOptions));
 const PORT = 3100;
 
 app.get('/', (req, res) => {

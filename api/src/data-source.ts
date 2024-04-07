@@ -8,7 +8,7 @@ export const dataSource = new DataSource({
     password: "your_password",
     database: "expensestracker",
     entities: [__dirname + "/**/entity/*.js"],
-    logging: ["query", "error"],
+    logging: ["error"],
     synchronize: true,
     migrations: [__dirname + "/migration/*.js"],
 })
