@@ -1,13 +1,18 @@
 import { Expenses } from "../entity/Expenses";
+import { Users } from "../entity/Users";
+import { Categories } from "../entity/Categories";
 import { dataSource } from "../data-source";
 import { Request, Response, response } from "express";
-import { Users } from "../entity/Users";
 import { Repository } from "typeorm";
 
 export class UsersController {
-  private static usersRepository: Repository<Users> = dataSource.getRepository(Users);
-  private static expensesRepository: Repository<Expenses> = dataSource.getRepository(Expenses);
-  
+  private static usersRepository: Repository<Users> =
+    dataSource.getRepository(Users);
+  private static expensesRepository: Repository<Expenses> =
+    dataSource.getRepository(Expenses);
+  private static categoriesRepository: Repository<Categories> =
+    dataSource.getRepository(Categories);
+
   static getAll = async (req: Request, res: Response) => {
     const users = await this.usersRepository.find();
     return res.send(users);
@@ -175,18 +180,30 @@ export class UsersController {
     const user = await this.usersRepository.findOneBy({
       id: parseInt(req.params.id),
     });
+    console.log(user);
     if (user) {
-      const expenses = req.body.expenses.map((expense: any) => {
-        const newExpense = new Expenses();
-        newExpense.date = expense.date;
-        newExpense.amount = expense.amount;
-        newExpense.description = expense.description;
-        newExpense.category = expense.category;
-        newExpense.user = user;
-        return newExpense;
-      });
-      const results = await this.expensesRepository.save(expenses);
-      return res.send(results);
+      const expensesData = req.body.expenses;
+
+      for (const expenseData of expensesData) {
+        const category = await this.categoriesRepository.findOneBy({
+          id: parseInt(expenseData.categoryId),
+        });
+
+        if (!category) {
+          return res.status(400).json({ message: "Category not found" });
+        }
+
+        const expense = new Expenses();
+        expense.date = expenseData.date;
+        expense.amount = expenseData.amount;
+        expense.description = expenseData.description;
+        expense.category = category;
+        expense.user = user;
+
+        await this.expensesRepository.save(expense);
+      }
+
+      return res.status(201).json({ message: "Expenses created successfully" });
     } else {
       return res.status(404).send("User not found");
     }

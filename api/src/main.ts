@@ -30,7 +30,7 @@ app.post("/users", UsersController.create);
 app.patch("/users/:id", UsersController.update);
 app.delete("/users/:id", UsersController.delete);
 app.get("/users/:id/expenses", UsersController.getExpenses);
-app.post("/users/:id/expenses", UsersController.createExpense);
+app.post("/users/:id/expenses", UsersController.createExpenses);
 app.get("/users/:id/expenses/:expense_id", UsersController.getExpense);
 app.delete("/users/:id/expenses/:expense_id", UsersController.deleteExpense);
 app.patch("/users/:id/expenses/:expense_id", UsersController.updateExpense);

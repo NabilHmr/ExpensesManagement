@@ -4,6 +4,7 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   ManyToOne,
+  JoinColumn,
 } from "typeorm";
 import { Users } from "./Users";
 import { Categories } from "./Categories";
@@ -16,10 +17,10 @@ export class Expenses {
   @CreateDateColumn()
   date!: Date;
 
-  @Column()
+  @Column('decimal', { precision: 6, scale: 2 })
   amount!: number;
 
-  @Column("varchar", { length: 200 })
+  @Column("varchar", { length: 200, nullable: true })
   description!: string;
 
   @ManyToOne(() => Categories, (category) => category.expenses)

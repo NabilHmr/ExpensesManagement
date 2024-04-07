@@ -20,11 +20,11 @@ describe('POST /categories', () => {
     it('should create a new category', () => {
         request(app)
             .post('/users')
-            .send({ category_type: 'CREDIT', category_name : 'Salary' })
+            .send({ type: 'CREDIT', name : 'Salary' })
             .set('Accept', 'application/json')
             .expect(201)
             .then((response) => {
-                expect(response.body).toContain({ category_type: 'CREDIT', category_name : 'Salary'})
+                expect(response.body).toContain({ type: 'CREDIT', name : 'Salary'})
             });
     });
 });
