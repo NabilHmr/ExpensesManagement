@@ -34,12 +34,12 @@ body {
   min-height: 100vh;
 }
 
-/* h1 {
-  font-size: 3.2em;
+h1 {
+  @apply text-2xl font-bold pb-6;
   line-height: 1.1;
 }
 
-button {
+/* button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -82,3 +82,23 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+.badge {
+  @apply inline-block px-2 py-1 text-xs font-semibold leading-none rounded-full;
+}
+
+.badge-success {
+  @apply text-green-100 bg-green-600;
+}
+
+.badge-warning {
+  @apply text-yellow-100 bg-yellow-600;
+}
+
+.badge-info {
+  @apply text-blue-100 bg-blue-600;
+}
+
+.badge-danger {
+  @apply text-red-100 bg-red-600;
+}

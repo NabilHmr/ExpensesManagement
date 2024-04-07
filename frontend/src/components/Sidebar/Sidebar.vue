@@ -13,6 +13,11 @@ const items = [
         icon: "transaction"
     },
     {
+        label: "Categories",
+        href: "/categories",
+        icon: "label-alt",
+    },
+    {
         label: "Reports",
         href: "/reports",
         icon: "chart-pie",

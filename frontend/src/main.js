@@ -4,8 +4,10 @@ import './style.css'
 import router from './router'
 import App from './App.vue'
 import Unicon from 'vue-unicons'
-import { uniDashboard, uniTransaction, uniLifeRing, uniCog, uniChartPie } from 'vue-unicons/dist/icons'
+import { uniDashboard, uniTransaction, uniLifeRing, uniCog, uniChartPie, uniLabelAlt, uniEdit, uniTrashAlt } from 'vue-unicons/dist/icons'
+import Vue3EasyDataTable from 'vue3-easy-data-table';
+import 'vue3-easy-data-table/dist/style.css';
 
-Unicon.add([uniDashboard, uniTransaction, uniLifeRing, uniCog, uniChartPie])
+Unicon.add([uniDashboard, uniTransaction, uniLifeRing, uniCog, uniChartPie, uniLabelAlt, uniEdit, uniTrashAlt])
 
-createApp(App).use(createPinia()).use(router).use(Unicon).mount('#app')
+createApp(App).use(createPinia()).use(router).use(Unicon).component('EasyDataTable', Vue3EasyDataTable).mount('#app')
