@@ -50,9 +50,10 @@ const items = [
 <template>
     <div class="flex h-screen flex-col justify-between border-e bg-white min-w-60">
         <div class="px-4 py-6">
-            <span class="grid h-10 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600">
-                Logo
-            </span>
+            <div class="flex flex-col justify-center items-center">
+                <img src="@assets/expensestracker.svg" alt="ExpensesTracker Logo" class="h-16" />
+                <span class="text-xl font-semibold text-primary">ExpensesTracker</span>
+            </div>
 
             <ul class="mt-6 space-y-1">
                 <li>
