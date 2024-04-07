@@ -1,7 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, BeforeUpdate, BeforeInsert, Index } from "typeorm";
 import { Expenses } from "./Expenses";
 
-@Entity()
+@Entity("users")
+@Index(["firstName", "lastName"])
 export class Users {
   @PrimaryGeneratedColumn()
   id!: number;
@@ -20,4 +21,10 @@ export class Users {
 
   @OneToMany(() => Expenses, (expenses) => expenses.user)
   expenses!: Expenses[];
+
+  @BeforeUpdate()
+  @BeforeInsert()
+  updateLastName() {
+    this.lastName = this.lastName.toUpperCase();
+  }
 }

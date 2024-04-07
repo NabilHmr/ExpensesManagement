@@ -4,14 +4,14 @@ export class AddEmailToUsers1710187464177 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`
-            ALTER TABLE "user"
+            ALTER TABLE "users"
             ADD COLUMN "email" VARCHAR(255) NOT NULL
         `)
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`
-            ALTER TABLE "user"
+            ALTER TABLE "users"
             DROP COLUMN "email"
         `)
     }

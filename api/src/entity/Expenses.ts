@@ -11,18 +11,18 @@ import { Categories } from "./Categories";
 @Entity()
 export class Expenses {
   @PrimaryGeneratedColumn()
-  expense_id!: number;
+  id!: number;
 
   @CreateDateColumn()
-  expense_date!: Date;
+  date!: Date;
 
   @Column()
-  expense_amount!: number;
+  amount!: number;
 
   @Column("varchar", { length: 200 })
-  expense_description!: string;
+  description!: string;
 
-  @ManyToOne(() => Categories, (categories) => categories.expenses)
+  @ManyToOne(() => Categories, (category) => category.expenses)
   category!: Categories;
 
   @ManyToOne(() => Users, (user) => user.expenses)

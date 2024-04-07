@@ -14,14 +14,14 @@ export enum CategoryType {
 @Entity()
 export class Categories {
   @PrimaryGeneratedColumn()
-  category_id!: number;
+  id!: number;
 
   @OneToMany(() => Expenses, (expenses) => expenses.category)
   expenses!: Expenses;
 
   @Column("varchar", { length: 50 })
-  category_name!: string;
+  name!: string;
 
   @Column({ type: "enum", enum: CategoryType })
-  category_type!: CategoryType;
+  type!: CategoryType;
 }
